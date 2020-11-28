@@ -37,7 +37,8 @@ operations = {
 }
 
 def calculator():
-    num1 = int(input("What's the first number?: "))
+    print(logo)
+    num1 = float(input("What's the first number?: "))
 
     for symbol in operations:
         print(symbol)
@@ -45,7 +46,7 @@ def calculator():
     game = False
 
     operation_symbol = input("Pick an operation from the line above: ")
-    num2 = int(input("What's the second number?: "))
+    num2 = float(input("What's the second number?: "))
     calculation_function = operations[operation_symbol]
     first_answer = calculation_function(num1, num2)
     print(f"{num1} {operation_symbol} {num2} = {first_answer}")
@@ -55,7 +56,7 @@ def calculator():
         iteration = input(f"Type 'y' to continue calculating {first_answer}, or type 'n' to start a new calculation: ")
         if iteration == 'y':
             operation_symbol = input("Pick another operation: ")
-            num3 = int(input("What's the next number?: "))
+            num3 = float(input("What's the next number?: "))
             calculation_function = operations[operation_symbol]
             second_answer = calculation_function(first_answer, num3)
             print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
@@ -67,3 +68,27 @@ def calculator():
             print("You didn't type 'n' or 'y'")
 
 calculator()
+
+#another way to do the project is:
+
+#def calculator():
+    #print(logo)
+    #num1 = float(input("What's the first number?: "))
+    #for symbol in operations:
+        #print(symbol)
+    #should_continue = True
+
+    #while should_continue:
+        #operation_symbol = input("Pick an operation: ")
+        #num2 = float(input("What's the second number?: "))
+        #calculation_function = operations[operation_symbol]
+        #answer = calculation_function(num1, num2)
+        #print(f"{num1} {operation_symbol} {num2} = {answer}")
+
+        #if input(f"Type 'y' to continue calculating {answer}, or type 'n' to start a new calculation: ") == 'y':
+            #num1 = answer
+        #else:
+            #should_continue = False
+            #calculator()
+
+#calculator()
